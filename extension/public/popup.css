@@ -1,0 +1,39 @@
+:root { background: #008080; }
+* { box-sizing: border-box; }
+body { background: #c0c0c0; color: #111; font: 12px "MS Sans Serif", Tahoma, sans-serif; margin: 0; min-width: 340px; }
+button, input { font: inherit; }
+.app-window { background: #c0c0c0; box-shadow: inset -1px -1px #000, inset 1px 1px #fff, inset -2px -2px #808080, inset 2px 2px #dfdfdf; padding: 3px; }
+.titlebar { align-items: center; background: #000080; color: white; display: flex; gap: 7px; height: 22px; padding: 2px 4px; }
+.window-controls { font-weight: 700; letter-spacing: 2px; margin-left: auto; }
+.app-body { padding: 14px 13px 10px; }
+.brand-mark { align-items: center; background: #000080; box-shadow: inset -2px -2px #000, inset 2px 2px #55aaff; color: #fff; display: flex; font: 700 25px/1 Arial, sans-serif; height: 42px; justify-content: center; letter-spacing: -4px; width: 42px; }
+.brand-mark span { color: #ffe75a; font-size: 14px; letter-spacing: -2px; margin-left: 2px; }
+.brand-mark.small { background: #c0c0c0; box-shadow: none; color: #fff; font-size: 13px; height: 16px; letter-spacing: -2px; width: 16px; }
+.brand-mark.small span { color: #ffe75a; font-size: 8px; }
+.hero-row { align-items: center; display: flex; gap: 11px; margin-bottom: 14px; }
+h1 { font-size: 20px; margin: 0 0 2px; }
+p { margin: 0; }
+.hero-row p { color: #555; font-size: 11px; }
+.power-row, .status-panel, fieldset, .button-row { margin-top: 10px; }
+.power-row { align-items: center; border-top: 1px solid #808080; display: flex; justify-content: space-between; padding-top: 10px; }
+button { background: #c0c0c0; border: 0; box-shadow: inset -1px -1px #000, inset 1px 1px #fff, inset -2px -2px #808080, inset 2px 2px #dfdfdf; cursor: pointer; min-height: 24px; padding: 3px 12px; }
+button:active { box-shadow: inset 1px 1px #000, inset -1px -1px #fff, inset 2px 2px #808080; }
+button.toggle { font-weight: 700; min-width: 46px; }
+button.toggle.off, #site-toggle.off { color: #777; }
+.status-panel { align-items: center; background: #d4d0c8; box-shadow: inset 1px 1px #808080, inset -1px -1px #fff; display: flex; gap: 8px; padding: 8px; }
+.status-panel small, fieldset label { display: block; }
+.status-panel small { color: #555; margin-top: 2px; }
+.status-panel button { margin-left: auto; }
+.status-led { background: #00a000; border-radius: 50%; box-shadow: inset 1px 1px #005000; height: 8px; width: 8px; }
+.status-led.off { background: #777; }
+fieldset { border: 1px solid #808080; padding: 8px 10px 7px; }
+legend { padding: 0 3px; }
+fieldset label + label { margin-top: 6px; }
+input[type="radio"] { accent-color: #000080; margin: 0 4px 0 0; vertical-align: -1px; }
+.range-label { display: flex; justify-content: space-between; margin-top: 14px; }
+output { color: #000080; font-weight: 700; }
+input[type="range"] { accent-color: #000080; margin: 6px 0 0; width: 100%; }
+.button-row { display: flex; gap: 8px; justify-content: flex-end; }
+.statusbar { display: flex; justify-content: space-between; padding: 4px 6px 3px; }
+.statusbar span { border: 1px solid #808080; box-shadow: inset 1px 1px #000, inset -1px -1px #fff; padding: 2px 5px; }
+.pixel-dot { background: #008000; display: inline-block; height: 6px; margin-right: 4px; width: 6px; }

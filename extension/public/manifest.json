@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Retr-0 — Windows 98 for the web",
+  "version": "0.1.0",
+  "description": "A local visual translation engine that turns modern websites into Windows 98-era interfaces.",
+  "minimum_chrome_version": "110",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Retr-0",
+    "default_popup": "popup.html"
+  },
+  "options_page": "settings.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["content.css"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "assets/branding/retr0-16.svg",
+    "32": "assets/branding/retr0-32.svg",
+    "128": "assets/branding/retr0-128.svg"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

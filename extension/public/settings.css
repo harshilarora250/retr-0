@@ -1,0 +1,49 @@
+:root { background: #008080; }
+* { box-sizing: border-box; }
+body { background: #008080; color: #111; font: 13px "MS Sans Serif", Tahoma, sans-serif; margin: 0; min-height: 100vh; }
+button, input { font: inherit; }
+.settings-window { background: #c0c0c0; box-shadow: inset -1px -1px #000, inset 1px 1px #fff, inset -2px -2px #808080, inset 2px 2px #dfdfdf; margin: 28px auto; max-width: 960px; min-height: 650px; padding: 3px; width: calc(100% - 42px); }
+.titlebar { align-items: center; background: #000080; color: #fff; display: flex; gap: 8px; height: 24px; padding: 3px 5px; }
+.window-controls { font-weight: 700; letter-spacing: 2px; margin-left: auto; }
+.brand-mark { align-items: center; background: #000080; box-shadow: inset -2px -2px #000, inset 2px 2px #55aaff; color: #fff; display: flex; font: 700 28px/1 Arial, sans-serif; height: 48px; justify-content: center; letter-spacing: -4px; width: 48px; }
+.brand-mark span { color: #ffe75a; font-size: 16px; letter-spacing: -2px; margin-left: 2px; }
+.brand-mark.small { background: transparent; box-shadow: none; font-size: 14px; height: 17px; width: 17px; }
+.brand-mark.small span { font-size: 8px; }
+.brand-mark.large { font-size: 40px; height: 72px; width: 72px; }
+.brand-mark.large span { font-size: 20px; }
+.settings-layout { display: flex; min-height: 580px; }
+.sidebar { border-right: 1px solid #808080; padding: 15px 9px; width: 220px; }
+.sidebar-logo { align-items: center; display: grid; gap: 3px 9px; grid-template-columns: 48px 1fr; margin: 0 7px 24px; }
+.sidebar-logo .brand-mark { grid-row: span 2; }
+.sidebar-logo small { color: #555; font-size: 11px; }
+.nav-item { background: transparent; border: 0; box-shadow: none; display: block; padding: 8px 10px; text-align: left; width: 100%; }
+.nav-item.active { background: #000080; color: #fff; }
+.settings-content { max-width: 680px; padding: 28px 36px; width: 100%; }
+.settings-section { display: none; }
+.settings-section.active { display: block; }
+h1 { font-size: 23px; margin: 0 0 7px; }
+h2 { margin: 0 0 4px; }
+.lede { color: #555; line-height: 1.45; margin-bottom: 22px; max-width: 540px; }
+.setting-card, .list-card, .about-card { align-items: center; background: #d4d0c8; box-shadow: inset -1px -1px #fff, inset 1px 1px #808080; display: flex; gap: 14px; justify-content: space-between; margin-bottom: 14px; padding: 12px 14px; }
+.setting-card small, .about-card p { color: #555; display: block; margin-top: 4px; }
+.stacked { align-items: stretch; display: block; }
+.theme-options { display: flex; gap: 18px; margin-top: 13px; }
+.theme-options input { accent-color: #000080; margin: 0 4px 0 0; }
+.toggle { min-width: 52px; }
+.range-label { display: flex; justify-content: space-between; }
+.range-label output { color: #000080; font-weight: 700; }
+input[type="range"] { accent-color: #000080; margin-top: 10px; width: 100%; }
+.list-card { align-items: stretch; display: block; }
+.list-heading { display: flex; justify-content: space-between; }
+.list-heading span { background: #000080; color: #fff; padding: 1px 5px; }
+.domain-list { margin-top: 10px; }
+.domain-row { align-items: center; background: #fff; box-shadow: inset 1px 1px #808080; display: flex; justify-content: space-between; margin-top: 5px; padding: 6px 8px; }
+.domain-row button { min-height: 20px; padding: 2px 7px; }
+.empty { color: #666; font-style: italic; margin-top: 10px; }
+.about-card { justify-content: flex-start; }
+.muted { font-size: 11px; }
+.repo-link { color: #0000ee; display: inline-block; margin-top: 3px; text-decoration: underline; }
+.statusbar { display: flex; justify-content: space-between; padding: 4px 6px 3px; }
+.statusbar span { border: 1px solid #808080; box-shadow: inset 1px 1px #000, inset -1px -1px #fff; padding: 3px 7px; }
+.pixel-dot { background: #008000; display: inline-block; height: 6px; margin-right: 4px; width: 6px; }
+@media (max-width: 700px) { .settings-window { margin: 8px auto; width: calc(100% - 16px); } .settings-layout { display: block; } .sidebar { border-bottom: 1px solid #808080; border-right: 0; display: flex; gap: 5px; padding: 8px; width: 100%; } .sidebar-logo { display: none; } .nav-item { width: auto; } .settings-content { padding: 22px 16px; } }

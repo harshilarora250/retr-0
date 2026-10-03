@@ -1,0 +1,200 @@
+/* Retr-0's visual translation layer. Selectors are scoped to the opt-in root so the
+   page remains untouched when the extension is disabled or a domain is excluded. */
+:root[data-retr0="on"] {
+  --retr0-window: #c0c0c0;
+  --retr0-surface: #d4d0c8;
+  --retr0-surface-soft: #d4d0c8;
+  --retr0-surface-soft: color-mix(in srgb, #d4d0c8 82%, white);
+  --retr0-white: #ffffff;
+  --retr0-light: #dfdfdf;
+  --retr0-mid: #808080;
+  --retr0-dark: #404040;
+  --retr0-black: #000000;
+  --retr0-blue: #000080;
+  --retr0-brand: #000080;
+  --retr0-link: #0000ee;
+  --retr0-visited: #551a8b;
+  --retr0-text: #111111;
+  --retr0-font: "MS Sans Serif", "Microsoft Sans Serif", Tahoma, Geneva, sans-serif;
+  --retr0-mono: "Courier New", monospace;
+  --retr0-bevel-raised: inset -1px -1px var(--retr0-black), inset 1px 1px var(--retr0-white), inset -2px -2px var(--retr0-dark), inset 2px 2px var(--retr0-light);
+  --retr0-bevel-sunken: inset 1px 1px var(--retr0-black), inset -1px -1px var(--retr0-white), inset 2px 2px var(--retr0-dark), inset -2px -2px var(--retr0-light);
+  --retr0-radius: calc((1 - var(--retr0-intensity)) * 10px);
+  --retr0-space: calc(1px + (1 - var(--retr0-intensity)) * 3px);
+  --retr0-transition: calc((1 - var(--retr0-intensity)) * 180ms);
+  color-scheme: light;
+  scrollbar-color: var(--retr0-mid) var(--retr0-surface);
+}
+
+:root[data-retr0="on"] body {
+  background: var(--retr0-surface-soft);
+  color: var(--retr0-text);
+  font-family: var(--retr0-font);
+  font-size: max(13px, calc(13px + var(--retr0-modernity) * 1px));
+  line-height: 1.35;
+  cursor: url("assets/cursors/default.svg") 2 2, default;
+}
+
+:root[data-retr0="on"] :where(button, [role="button"], a, summary, input[type="submit"], input[type="button"], input[type="reset"]) {
+  cursor: url("assets/cursors/pointer.svg") 6 2, pointer;
+}
+
+:root[data-retr0="on"] :where(input[type="text"], input[type="search"], input[type="email"], input[type="url"], input[type="password"], input[type="number"], textarea, [contenteditable="true"]) {
+  cursor: url("assets/cursors/text.svg") 8 8, text;
+}
+
+:root[data-retr0="on"] :where(a, a:visited) {
+  color: var(--retr0-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 1px;
+}
+
+:root[data-retr0="on"] a:visited { color: var(--retr0-visited); }
+
+:root[data-retr0="on"] :where(h1, h2, h3, h4, h5, h6, .retr0-kind-heading) {
+  color: color-mix(in srgb, var(--retr0-text) 84%, var(--retr0-brand));
+  font-family: var(--retr0-font);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+:root[data-retr0="on"] :where(h1, .retr0-kind-heading:nth-of-type(1)) { font-size: clamp(18px, 2.5vw, 28px); }
+:root[data-retr0="on"] :where(h2, h3, h4, h5, h6) { font-size: clamp(15px, 1.5vw, 21px); }
+
+:root[data-retr0="on"] :where(.retr0-kind-button, button, [role="button"], input[type="submit"], input[type="button"], input[type="reset"]) {
+  appearance: none;
+  background: var(--retr0-surface);
+  border: 0;
+  border-radius: var(--retr0-radius);
+  box-shadow: var(--retr0-bevel-raised);
+  color: var(--retr0-text);
+  font: 13px var(--retr0-font);
+  min-height: 24px;
+  padding: 3px 12px;
+  transition: background var(--retr0-transition), transform var(--retr0-transition);
+}
+
+:root[data-retr0="on"] :where(.retr0-kind-button, button, [role="button"], input[type="submit"], input[type="button"], input[type="reset"]):hover { background: color-mix(in srgb, var(--retr0-surface) 88%, white); }
+:root[data-retr0="on"] :where(.retr0-kind-button, button, [role="button"], input[type="submit"], input[type="button"], input[type="reset"]):active { box-shadow: var(--retr0-bevel-sunken); transform: translate(1px, 1px); }
+
+:root[data-retr0="on"] :where(.retr0-kind-input, .retr0-kind-textarea, .retr0-kind-select, input:not([type="checkbox"]):not([type="radio"]), textarea, select) {
+  appearance: none;
+  background: var(--retr0-white);
+  border: 0;
+  border-radius: 0;
+  box-shadow: var(--retr0-bevel-sunken);
+  color: var(--retr0-text);
+  font: 13px var(--retr0-font);
+  min-height: 22px;
+  padding: 3px 5px;
+}
+
+:root[data-retr0="on"] :where(select, .retr0-kind-select) {
+  background: var(--retr0-white) linear-gradient(45deg, transparent 50%, var(--retr0-black) 50%) calc(100% - 9px) 9px / 4px 4px no-repeat, linear-gradient(135deg, var(--retr0-black) 50%, transparent 50%) calc(100% - 5px) 9px / 4px 4px no-repeat;
+  padding-right: 24px;
+}
+
+:root[data-retr0="on"] :where(input, textarea, select, button, [tabindex]):focus-visible {
+  outline: 1px dotted var(--retr0-black);
+  outline-offset: 2px;
+}
+
+:root[data-retr0="on"] :where(input[type="checkbox"], input[type="radio"]) {
+  appearance: none;
+  background: var(--retr0-white);
+  border: 0;
+  box-shadow: var(--retr0-bevel-sunken);
+  display: inline-grid;
+  height: 13px;
+  margin: 0 5px 0 0;
+  place-content: center;
+  vertical-align: -2px;
+  width: 13px;
+}
+
+:root[data-retr0="on"] input[type="checkbox"]:checked::after { content: "×"; font: 700 15px/10px Arial, sans-serif; }
+:root[data-retr0="on"] input[type="radio"] { border-radius: 50%; }
+:root[data-retr0="on"] input[type="radio"]:checked::after { background: var(--retr0-black); border-radius: 50%; content: ""; height: 5px; width: 5px; }
+
+:root[data-retr0="on"] :where(.retr0-kind-card, [data-retr0-surface="card"], article, aside, fieldset) {
+  background: var(--retr0-surface-soft);
+  border: 0;
+  border-radius: var(--retr0-radius);
+  box-shadow: var(--retr0-bevel-raised);
+  padding: max(8px, calc(8px + (1 - var(--retr0-intensity)) * 7px));
+}
+
+:root[data-retr0="on"] :where(.retr0-kind-dialog, [role="dialog"], [data-retr0-surface="dialog"]) {
+  background: var(--retr0-surface);
+  border: 0;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, .35), var(--retr0-bevel-raised);
+  color: var(--retr0-text);
+  padding: 24px 8px 8px;
+  position: relative;
+}
+
+:root[data-retr0="on"] :where(.retr0-kind-dialog, [role="dialog"], [data-retr0-surface="dialog"])::before {
+  background: var(--retr0-blue);
+  color: white;
+  content: "Retr-0 window";
+  font: 700 12px var(--retr0-font);
+  left: 3px;
+  line-height: 18px;
+  padding: 0 5px;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+
+:root[data-retr0="on"] :where(nav, .retr0-kind-nav, [role="navigation"]) {
+  background: var(--retr0-surface);
+  border-bottom: 0;
+  box-shadow: var(--retr0-bevel-raised);
+  padding: 5px;
+}
+
+:root[data-retr0="on"] :where(.retr0-kind-tabs, [role="tablist"]) { border-bottom: 2px solid var(--retr0-dark); display: flex; gap: 2px; }
+:root[data-retr0="on"] :where([role="tab"], .retr0-kind-tabs > *) { background: var(--retr0-surface); border: 0; box-shadow: var(--retr0-bevel-raised); padding: 5px 10px; }
+:root[data-retr0="on"] :where([role="tab"][aria-selected="true"], .retr0-kind-tabs > [aria-selected="true"]) { background: var(--retr0-white); box-shadow: inset 1px 1px var(--retr0-white), inset -1px 0 var(--retr0-dark); margin-bottom: -2px; }
+
+:root[data-retr0="on"] :where(table, .retr0-kind-table) { background: var(--retr0-white); border: 0; border-collapse: collapse; box-shadow: var(--retr0-bevel-sunken); }
+:root[data-retr0="on"] :where(th, td) { border: 1px solid var(--retr0-mid); padding: 4px 7px; text-align: left; }
+:root[data-retr0="on"] :where(th) { background: var(--retr0-surface); font-weight: 700; }
+:root[data-retr0="on"] :where(tr:nth-child(even)) { background: #eeeeee; }
+
+:root[data-retr0="on"] :where(pre, code, .retr0-kind-code) { background: #111; color: #d7ffd7; font-family: var(--retr0-mono); font-size: .92em; }
+:root[data-retr0="on"] :where(code) { padding: 1px 3px; }
+:root[data-retr0="on"] :where(pre) { overflow: auto; padding: 10px; }
+:root[data-retr0="on"] :where(hr, .retr0-kind-separator) { border: 0; border-top: 1px solid var(--retr0-mid); border-bottom: 1px solid var(--retr0-white); height: 2px; }
+:root[data-retr0="on"] :where(progress, .retr0-kind-progress) { accent-color: var(--retr0-blue); height: 16px; }
+:root[data-retr0="on"] ::selection { background: var(--retr0-blue); color: white; }
+
+:root[data-retr0="on"] :where([aria-disabled="true"], :disabled) { color: #777; cursor: not-allowed; filter: grayscale(.35); }
+:root[data-retr0="on"] :where(*):not(input):not(textarea):not(select) { transition-duration: var(--retr0-transition); }
+
+:root[data-retr0="on"][data-retr0-theme="modern"] {
+  --retr0-surface: #d9dce1;
+  --retr0-surface-soft: #eef0f3;
+  --retr0-surface-soft: color-mix(in srgb, #eef0f3 88%, var(--retr0-brand));
+  --retr0-radius: calc((1 - var(--retr0-intensity)) * 7px + var(--retr0-modernity) * 3px);
+  --retr0-bevel-raised: inset -1px -1px #68717d, inset 1px 1px #ffffff, 0 1px 2px rgba(0, 0, 0, .15);
+  --retr0-bevel-sunken: inset 1px 1px #68717d, inset -1px -1px #ffffff;
+}
+
+#retr0-overlay {
+  background: transparent;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  z-index: 2147483647;
+}
+#retr0-overlay .retr0-sweep { animation: retr0-sweep 850ms cubic-bezier(.2,.8,.3,1) forwards; background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent); height: 100%; left: -45%; position: absolute; top: 0; transform: skewX(-14deg); width: 32%; }
+#retr0-overlay .retr0-wand { animation: retr0-wand 1s cubic-bezier(.2,.8,.3,1) forwards; color: #ffe56b; filter: drop-shadow(0 0 5px #fff); font: 28px serif; left: -40px; position: absolute; top: 42%; }
+@keyframes retr0-sweep { from { left: -45%; } to { left: 125%; } }
+@keyframes retr0-wand { 0% { left: -40px; opacity: 0; transform: rotate(-28deg) scale(.8); } 15% { opacity: 1; } 75% { left: calc(100% - 20px); opacity: 1; } 100% { left: calc(100% + 40px); opacity: 0; transform: rotate(28deg) scale(1.1); } }
+@media (prefers-reduced-motion: reduce) { #retr0-overlay { display: none; } :root[data-retr0="on"] :where(*):not(input):not(textarea):not(select) { transition-duration: 0ms; } }

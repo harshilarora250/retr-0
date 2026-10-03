@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Retr-0</title><link rel="stylesheet" href="popup.css"></head>
+  <body>
+    <main class="app-window" data-retr0-owned>
+      <header class="titlebar"><div class="brand-mark small">R<span>0</span></div><strong>Retr-0</strong><span class="window-controls">_ □ ×</span></header>
+      <section class="app-body">
+        <div class="hero-row"><div class="brand-mark">R<span>0</span></div><div><h1>Retr-0</h1><p>Windows 98 for the web</p></div></div>
+        <div class="power-row"><span>Retr-0 is <strong id="enabled-label">ON</strong></span><button id="power-toggle" class="toggle" type="button">ON</button></div>
+        <div class="status-panel"><span class="status-led" id="site-led"></span><div><strong>Current site</strong><small id="site-name">Checking domain…</small></div><button id="site-toggle" type="button">ON</button></div>
+        <fieldset><legend>Theme</legend><label><input type="radio" name="mode" value="retro" checked> Windows 98 Retro</label><label><input type="radio" name="mode" value="modern"> Modern 98</label></fieldset>
+        <label class="range-label" for="intensity"><span>Intensity</span><output id="intensity-value">84%</output></label><input id="intensity" type="range" min="0" max="100" value="84">
+        <div class="button-row"><button id="settings-button" type="button">Settings</button><button id="open-github" type="button">About ↗</button></div>
+      </section>
+      <footer class="statusbar"><span><i class="pixel-dot"></i> Ready</span><span>v0.1.0</span></footer>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
